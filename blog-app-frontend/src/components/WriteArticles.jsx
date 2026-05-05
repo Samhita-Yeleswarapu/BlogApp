@@ -33,8 +33,10 @@ function WriteArticles() {
     articleObj.author = currentUser._id;
 
     try {
-      let res = await axios.post(
-        "http://localhost:4000/author-api/article",
+      const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
+let res = await axios.post(
+  `${BASE_URL}/author-api/article`,
         articleObj,
         { withCredentials: true }
       );
