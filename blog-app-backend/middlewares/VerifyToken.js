@@ -1,4 +1,4 @@
-make changes n send correct code import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import { config } from "dotenv";
 const { verify } = jwt;
 config();
