@@ -48,8 +48,10 @@ function Register() {
         formData.append("profileImageUrl", userObj.profileImageUrl[0]);
       }
 
-      const res = await axios.post(
-        "http://localhost:4000/auth/users",
+     const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
+const res = await axios.post(
+  `${BASE_URL}/auth/users`,  
         formData,
         {
           withCredentials: true,
